@@ -2,7 +2,7 @@ Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
 Version:	0.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.mosfet.org/pixie/%{name}-kde-%{version}.tar.gz
@@ -11,8 +11,8 @@ URL:		http://www.mosfet.org/pixie/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	kdelibs-devel >= 3.0.3
-BuildRequires:	libltdl-devel
 BuildRequires:	libtool
+BuildRequires:	libltdl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -59,4 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*
 %{_includedir}/*
-%{_datadir}/*
+%{_datadir}/apps/pixie
+%dir %{_datadir}/apps/konqueror/servicemenus
+%{_datadir}/apps/konqueror/servicemenus/*.desktop
+%{_datadir}/mimelnk/image/*.desktop
+%{_applnkdir}/Graphics/Viewers/*.desktop
+%{_pixmapsdir}/*/*/*/*.png
