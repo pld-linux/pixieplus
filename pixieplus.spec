@@ -9,14 +9,14 @@ Source0:	http://www.mosfet.org/pixie/%{name}-%{version}.tar.gz
 # Source0-md5:	a6296cdc53b5f1a38cd629f7591fef9e
 #Patch0:		%{name}-am16.patch
 URL:		http://www.mosfet.org/pixie/
+BuildRequires:	ImageMagick-c++-devel >= 5.5.0
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	kdelibs-devel >= 3.1
-BuildRequires:	qt-devel >= 3.1
-BuildRequires:	ImageMagick-c++-devel >= 5.5.0
-Requires:  	ImageMagick-c++ >= 5.5.0
-BuildRequires:	libtool
 BuildRequires:	libltdl-devel
+BuildRequires:	libtool
+BuildRequires:	qt-devel >= 3.1
+Requires:  	ImageMagick-c++ >= 5.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -34,7 +34,7 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 (poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe).
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 #%patch0 -p1
 
 %build
@@ -53,7 +53,8 @@ CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/Graphics/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers/
 
@@ -73,6 +74,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/x-pict.desktop
 %{_datadir}/mimelnk/image/x-tga.desktop
 %{_datadir}/mimelnk/image/x-xwd.desktop
-
 %{_applnkdir}/Graphics/Viewers/*.desktop
 %{_pixmapsdir}/*/*/*/*.png
