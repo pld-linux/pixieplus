@@ -6,6 +6,7 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.mosfet.org/pixie/%{name}-kde-%{version}.tar.gz
+# Source0-md5:	28735cb48dfeb32e34e19f5f9ab9af29
 Patch0:		%{name}-am16.patch
 URL:		http://www.mosfet.org/pixie/
 BuildRequires:	automake
