@@ -5,9 +5,13 @@ Version:	0.2.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://www.mosfet.org/pixie/%{name}-%{version}.tar.gz
+Source0:	http://www.mosfet.org/pixie/%{name}-kde-%{version}.tar.gz
+Patch0:		%{name}-am16.patch
 URL:		http://www.mosfet.org/pixie/
+BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRequires:	kdelibs-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -25,7 +29,8 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 (poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe).
 
 %prep
-%setup -q
+%setup -q -n %{name}-kde-%{version}
+%patch0 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
