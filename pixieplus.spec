@@ -1,21 +1,25 @@
 Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
-Version:	0.5.4
-Release:	4
+Version:	0.5.4.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.gz
-# Source0-md5:	a6296cdc53b5f1a38cd629f7591fef9e
-Patch0:		%{name}-types.patch
-Patch1:		%{name}-desktop.patch
+Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.bz2
+# Source0-md5:	5a7b98acef2af9cdf6a0b546cada562a
+Patch0:		%{name}-desktop.patch
+Patch1:		%{name}-bool.patch
 URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
-BuildRequires:	ImageMagick-c++-devel >= 5.5.0
+BuildRequires:	ImageMagick-c++-devel >= 6.0.0
 BuildRequires:	automake
+BuildRequires:	giflib-devel
 BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	libjpeg-devel
 BuildRequires:	libltdl-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libtiff-devel
 BuildRequires:	qt-devel >= 3.1
-Requires:	ImageMagick-c++ >= 5.5.0
+Requires:	ImageMagick-c++ >= 6.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
