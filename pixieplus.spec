@@ -11,6 +11,7 @@ Patch0:		%{name}-am16.patch
 URL:		http://www.mosfet.org/pixie/
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	ed
 BuildRequires:	kdelibs-devel >= 3.1.4
 BuildRequires:	libltdl-devel
 BuildRequires:	libtool
@@ -52,6 +53,16 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 
 mv -f $RPM_BUILD_ROOT%{_applnkdir}/Graphics/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers/
 
+ln -s hicolor/48x48/apps/pixie.png $RPM_BUILD_ROOT%{_pixmapsdir}
+
+mv $RPM_BUILD_ROOT%{_pixmapsdir}/{l,L}ocolor
+
+for i in $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers/*.desktop; do
+	if grep '^Icon=.[^.]*$' $i >/dev/null; then
+		echo -e ',s/\(^Icon=.*$\)/\\1.png/\n,w' | ed $i
+	fi
+done
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -67,3 +78,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/x-pict*.desktop
 %{_applnkdir}/Graphics/Viewers/*.desktop
 %{_pixmapsdir}/*/*/*/*.png
+%{_pixmapsdir}/pixie.png
