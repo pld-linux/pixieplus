@@ -46,7 +46,7 @@ CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
 #%%{__make} -f Makefile.cvs
 %configure	\
 	--enable-final
-	
+
 %{__make}
 
 %install
