@@ -1,0 +1,49 @@
+diff -ur pixieplus-0.5.4.1.orig/app/batch.cpp pixieplus-0.5.4.1/app/batch.cpp
+--- pixieplus-0.5.4.1.orig/app/batch.cpp	2004-05-22 16:02:26.000000000 +0200
++++ pixieplus-0.5.4.1/app/batch.cpp	2004-07-16 23:53:48.464704872 +0200
+@@ -618,9 +618,9 @@
+     else if(type == Equalize)
+         EqualizeImage(img);
+     else if(type == IncContrast)
+-        ContrastImage(img, true);
++        ContrastImage(img, (MagickBooleanType)true);
+     else if(type == DecContrast)
+-        ContrastImage(img, false);
++        ContrastImage(img, (MagickBooleanType)false);
+     else if(type == Solarize)
+         SolarizeImage(img, weight);
+     else if(type == Threshold)
+@@ -752,7 +752,7 @@
+             save = false;
+     }
+     else if(type == Shade){
+-        Image *tmp = ShadeImage(img, useColor, a, e, &exception);
++        Image *tmp = ShadeImage(img, (MagickBooleanType)useColor, a, e, &exception);
+         if(tmp){
+             if(img->next)
+                 DestroyImageList(img);
+diff -ur pixieplus-0.5.4.1.orig/app/ifapp.cpp pixieplus-0.5.4.1/app/ifapp.cpp
+--- pixieplus-0.5.4.1.orig/app/ifapp.cpp	2004-05-22 16:02:26.000000000 +0200
++++ pixieplus-0.5.4.1/app/ifapp.cpp	2004-07-17 00:04:21.459475040 +0200
+@@ -33,18 +33,18 @@
+ 
+ // ImageMagick message and progress stubs
+ extern "C"{
+-    unsigned int magickMonitor(const char *msg, const off_t value,
++    MagickBooleanType magickMonitor(const char *msg, const off_t value,
+                                const long long unsigned int span, ExceptionInfo *)
+     {
+         if(!appPtr)
+-            return(true);
++            return((MagickBooleanType)true);
+         int val = (int)((((float)value)/((float)span))*100.0);
+         if(appPtr->magickMessageProgress())
+             appPtr->magickMessageProgress()->setValue(val);
+         if(appPtr->magickMessageLabel())
+             appPtr->magickMessageLabel()->setText(msg);
+         appPtr->processEvents();
+-        return(true);
++        return((MagickBooleanType)true);
+     }
+ 
+     void magickWarning(const ExceptionType /*warning*/, const char *reason,
