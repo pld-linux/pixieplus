@@ -1,21 +1,25 @@
 Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
-Version:	0.3
-Release:	3
+Version:	0.5.4
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://www.mosfet.org/pixie/%{name}-kde-%{version}.tar.gz
-Patch0:		%{name}-am16.patch
+Source0:	http://www.mosfet.org/pixie/%{name}-%{version}.tar.gz
+#Patch0:		%{name}-am16.patch
 URL:		http://www.mosfet.org/pixie/
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	kdelibs-devel >= 3.0.3
+BuildRequires:	kdelibs-devel >= 3.1
+BuildRequires:	qt-devel >= 3.1
+BuildRequires:	ImageMagick-devel >= 5.5.0
+Requires:  ImageMagick-devel >= 5.5.0
 BuildRequires:	libtool
 BuildRequires:	libltdl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
+%define		_prefix		%{_usr}
 
 %description
 Pixie is designed to allow you to efficently browse, manage, and view
@@ -29,17 +33,19 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 (poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe).
 
 %prep
-%setup -q -n %{name}-kde-%{version}
+%setup -q -n %{name}-%{version}
 #%patch0 -p1
 
 %build
+kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
 CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
 #%{__make} -f Makefile.cvs
-%configure2_13
-
+%configure	\
+	--enable-final
+	
 %{__make}
 
 %install
@@ -57,10 +63,15 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/*
-%{_includedir}/*
+##{_includedir}/*
 %{_datadir}/apps/pixie
 %dir %{_datadir}/apps/konqueror/servicemenus
 %{_datadir}/apps/konqueror/servicemenus/*.desktop
-%{_datadir}/mimelnk/image/*.desktop
+%{_datadir}/mimelnk/image/x-miff.desktop
+##{_datadir}/mimelnk/image/x-pcx.desktop
+%{_datadir}/mimelnk/image/x-pict.desktop
+%{_datadir}/mimelnk/image/x-tga.desktop
+%{_datadir}/mimelnk/image/x-xwd.desktop
+
 %{_applnkdir}/Graphics/Viewers/*.desktop
 %{_pixmapsdir}/*/*/*/*.png
