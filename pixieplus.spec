@@ -5,10 +5,10 @@ Version:	0.5.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	http://www.mosfet.org/pixie/%{name}-%{version}.tar.gz
+Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.gz
 # Source0-md5:	a6296cdc53b5f1a38cd629f7591fef9e
 #Patch0:		%{name}-am16.patch
-URL:		http://www.mosfet.org/pixie/
+URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
 BuildRequires:	ImageMagick-c++-devel >= 5.5.0
 BuildRequires:	automake
 BuildRequires:	autoconf
