@@ -55,7 +55,9 @@ mv -f $RPM_BUILD_ROOT%{_applnkdir}/Graphics/*.desktop $RPM_BUILD_ROOT%{_applnkdi
 
 ln -s hicolor/48x48/apps/pixie.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
-mv $RPM_BUILD_ROOT%{_pixmapsdir}/{l,L}ocolor
+for i in brightness+ brightness- contrast+ contrast- fliph flipv scaledown scaleup; do
+	mv $RPM_BUILD_ROOT%{_pixmapsdir}/{lo,hi}color/16x16/actions/$i.png
+done
 
 for i in $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers/*.desktop; do
 	if grep '^Icon=.[^.]*$' $i >/dev/null; then
@@ -77,5 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/x-[!p]*.desktop
 %{_datadir}/mimelnk/image/x-pict*.desktop
 %{_applnkdir}/Graphics/Viewers/*.desktop
-%{_pixmapsdir}/*/*/*/*.png
+%{_pixmapsdir}/[!l]*/*/*/*.png
 %{_pixmapsdir}/pixie.png
