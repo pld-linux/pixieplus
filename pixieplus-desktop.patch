@@ -1,0 +1,38 @@
+--- pixieplus-0.5.4/desktopfiles/pixie-mini.desktop.orig	Wed Jul 14 17:03:55 2004
++++ pixieplus-0.5.4/desktopfiles/pixie-mini.desktop	Wed Jul 14 17:11:29 2004
+@@ -1,10 +1,16 @@
+ [Desktop Entry]
+ Type=Application
+ Comment=PixiePlus Image Manager and Editor
++Comment[pl]=Program do przeglądania i zarządzania obrazkami PixiePlus
+ Icon=pixie
+ Name=PixiePlus (express mode)
++Name[pl]=PixiePlus (tryb szybki)
+ Exec=pixie -m %f
+ MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;image/x-bmp;image/png;image/x-jng;image/x-pcx;image/x-miff;image/x-pict;image/x-tga;image/x-xwd
+ InitialPreference=6
+ MapNotify=true
+ DocPath=pixie/index.html
++Terminal=false
++Categories=Qt;KDE;Graphics;Viewer;
++Encoding=UTF-8
++# vi: encoding=utf-8
+--- pixieplus-0.5.4/desktopfiles/pixie.desktop.orig	Wed Jul 14 17:04:06 2004
++++ pixieplus-0.5.4/desktopfiles/pixie.desktop	Wed Jul 14 17:11:28 2004
+@@ -1,10 +1,16 @@
+ [Desktop Entry]
+ Type=Application
+ Comment=PixiePlus Image Manager and Editor
++Comment[pl]=Program do przeglądania i zarządzania obrazkami PixiePlus
+ Icon=pixie
+ Name=PixiePlus Image Manager
++Name[pl]=Zarządca obrazków PixiePlus
+ Exec=pixie %f
+ MimeType=image/gif;image/x-xpm;image/x-xbm;image/jpeg;image/x-bmp;image/png;image/x-jng;image/x-pcx;image/x-miff;image/x-pict;image/x-tga;image/x-xwd
+ InitialPreference=5
+ MapNotify=true
+ DocPath=pixie/index.html
++Terminal=false
++Categories=Qt;KDE;Graphics;Viewer;
++Encoding=UTF-8
++# vi: encoding=utf-8
