@@ -9,6 +9,7 @@ Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{ve
 # Source0-md5:	5a7b98acef2af9cdf6a0b546cada562a
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bool.patch
+Patch2:		%{name}-gcc34.patch
 URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
 BuildRequires:	ImageMagick-c++-devel >= 6.0.0
 BuildRequires:	automake
@@ -38,6 +39,7 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 cp -f /usr/share/automake/config.* admin

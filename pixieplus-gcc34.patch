@@ -1,0 +1,25 @@
+--- pixieplus-0.5.4.1/misc/qxcfi.cpp.orig	2004-05-22 16:02:27.000000000 +0200
++++ pixieplus-0.5.4.1/misc/qxcfi.cpp	2004-08-06 22:25:16.616596888 +0200
+@@ -1342,7 +1342,7 @@
+ bool XCFImageFormat::loadProperty ( QDataStream& xcf_io, PropType& type,
+ 				    QByteArray& bytes )
+ {
+-  xcf_io >> (Q_UINT32)type;
++  xcf_io >> (Q_UINT32 &)type;
+ 
+   if ( xcf_io.device()->status() != IO_Ok ) {
+     qDebug( "XCF: read failure on property type" );
+--- pixieplus-0.5.4.1/app/rightclick.cpp.orig	2004-08-06 22:30:19.000000000 +0200
++++ pixieplus-0.5.4.1/app/rightclick.cpp	2004-08-06 22:36:10.401206520 +0200
+@@ -220,9 +220,9 @@
+             idx = -1;
+     }
+     if(idx != -1){
+-        QStringList itemList(view->itemCatagories(&itemList[idx]));
++        QStringList stringList(view->itemCatagories(&itemList[idx]));
+         for(it=catList.begin(), i=1000; it != catList.end(); ++it, ++i){
+-            if(itemList.findIndex((*it)) == -1)
++            if(stringList.findIndex((*it)) == -1)
+                 addMnu->insertItem((*it), i);
+             else
+                 delMnu->insertItem((*it), i+1000);
