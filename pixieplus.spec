@@ -30,7 +30,7 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 
 %prep
 %setup -q -n %{name}-kde-%{version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
