@@ -11,10 +11,8 @@ Patch0:		%{name}-types.patch
 URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
 BuildRequires:	ImageMagick-c++-devel >= 5.5.0
 BuildRequires:	automake
-BuildRequires:	autoconf
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	libltdl-devel
-BuildRequires:	libtool
 BuildRequires:	qt-devel >= 3.1
 Requires:	ImageMagick-c++ >= 5.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -40,8 +38,8 @@ echo 'Categories=Graphics;Viewer;' >> desktopfiles/pixie.desktop
 echo 'Categories=Graphics;Viewer;' >> desktopfiles/pixie-mini.desktop
 
 %build
+cp -f /usr/share/automake/config.* admin
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-
 %configure \
 	--enable-final
 
