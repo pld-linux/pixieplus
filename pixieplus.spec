@@ -16,7 +16,7 @@ BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	libltdl-devel
 BuildRequires:	libtool
 BuildRequires:	qt-devel >= 3.1
-Requires:  	ImageMagick-c++ >= 5.5.0
+Requires:	ImageMagick-c++ >= 5.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
