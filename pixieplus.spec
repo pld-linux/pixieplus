@@ -1,5 +1,5 @@
-Summary:	pixieplus - image viewer for KDE2
-Summary(pl):	pixieplus - przegl±darka obrazków dla KDE2
+Summary:	pixieplus - image viewer for KDE
+Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
 Version:	0.2.1
 Release:	1
