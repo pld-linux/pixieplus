@@ -2,12 +2,12 @@ Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
 Version:	0.5.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.gz
 # Source0-md5:	a6296cdc53b5f1a38cd629f7591fef9e
-#Patch0:		%{name}-am16.patch
+Patch0:		%{name}-types.patch
 URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
 BuildRequires:	ImageMagick-c++-devel >= 5.5.0
 BuildRequires:	automake
@@ -20,7 +20,6 @@ Requires:	ImageMagick-c++ >= 5.5.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
-%define		_prefix		%{_usr}
 
 %description
 Pixie is designed to allow you to efficently browse, manage, and view
@@ -35,36 +34,41 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 
 %prep
 %setup -q
-#%patch0 -p1
+%patch0 -p1
+
+echo 'Categories=Graphics;Viewer;' >> desktopfiles/pixie.desktop
+echo 'Categories=Graphics;Viewer;' >> desktopfiles/pixie-mini.desktop
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
-CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
-#%%{__make} -f Makefile.cvs
-%configure	\
+%configure \
 	--enable-final
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	appsdir=%{_desktopdir}
 
-mv -f $RPM_BUILD_ROOT%{_applnkdir}/Graphics/*.desktop $RPM_BUILD_ROOT%{_applnkdir}/Graphics/Viewers/
+# no -devel, so shouldn't be needed
+rm -f $RPM_BUILD_ROOT%{_libdir}/libpixie_misc.{so,la}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_libdir}/*
+%attr(755,root,root) %{_libdir}/libpixie_misc.so.*.*.*
+%attr(755,root,root) %{_libdir}/pixie.so
+%{_libdir}/pixie.la
 ##{_includedir}/*
 %{_datadir}/apps/pixie
 %dir %{_datadir}/apps/konqueror/servicemenus
@@ -74,5 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/x-pict.desktop
 %{_datadir}/mimelnk/image/x-tga.desktop
 %{_datadir}/mimelnk/image/x-xwd.desktop
-%{_applnkdir}/Graphics/Viewers/*.desktop
-%{_pixmapsdir}/*/*/*/*.png
+%{_desktopdir}/*.desktop
+%{_iconsdir}/*/*/*/*.png
