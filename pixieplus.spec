@@ -12,8 +12,8 @@ BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	kdelibs-devel >= 3.1
 BuildRequires:	qt-devel >= 3.1
-BuildRequires:	ImageMagick-devel >= 5.5.0
-Requires:  ImageMagick-devel >= 5.5.0
+BuildRequires:	ImageMagick-c++-devel >= 5.5.0
+Requires:  	ImageMagick-c++ >= 5.5.0
 BuildRequires:	libtool
 BuildRequires:	libltdl-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
