@@ -1,0 +1,18 @@
+--- pixieplus-kde-0.2.1/stub/Makefile.am~	Sun Jul 28 15:31:57 2002
++++ pixieplus-kde-0.2.1/stub/Makefile.am	Sun Jul 28 15:31:57 2002
+@@ -20,12 +20,12 @@
+ bin_PROGRAMS = pixie
+ pixie_LDFLAGS = $(all_libraries) $(KDE_RPATH) -L../giflib-4.1.0-lwz
+ pixie_LDADD = $(LIB_KDEUI) $(LIB_KSYCOCA) -ltiff -lgif_pixie pixie.la 
+-pixie_SOURCES = dummy.cpp
++pixie_SOURCES = dummy_pixie.cpp
+ 
+ CLEANFILES = dummy.cpp
+  
+-dummy.cpp:
+-	echo > dummy.cpp
++dummy__pixie.cpp:
++	echo > dummy_pixie.cpp
+ 
+ messages:
+ 	$(XGETTEXT) `find . -name "*.cpp"` -o $(podir)/pixie.pot
