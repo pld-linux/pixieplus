@@ -2,7 +2,7 @@ Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
 Version:	0.5.4.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.bz2
@@ -19,10 +19,9 @@ BuildRequires:	libltdl-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libtiff-devel
 BuildRequires:	qt-devel >= 3.1
+BuildRequires:	rpmbuild(macros) >= 1.129
 Requires:	ImageMagick-c++ >= 6.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 Pixie is designed to allow you to efficently browse, manage, and view
@@ -42,9 +41,10 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 
 %build
 cp -f /usr/share/automake/config.* admin
-kde_htmldir="%{_htmldir}"; export kde_htmldir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 %configure \
-	--enable-final
+	--enable-final \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
@@ -79,4 +79,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mimelnk/image/x-tga.desktop
 %{_datadir}/mimelnk/image/x-xwd.desktop
 %{_desktopdir}/*.desktop
-%{_iconsdir}/*/*/*/*.png
+%{_iconsdir}/hicolor/*/*/*.png
