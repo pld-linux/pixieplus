@@ -1,6 +1,6 @@
 --- pixieplus-kde-0.2.1/stub/Makefile.am~	Sun Jul 28 15:31:57 2002
 +++ pixieplus-kde-0.2.1/stub/Makefile.am	Sun Jul 28 15:31:57 2002
-@@ -23,12 +23,12 @@
+@@ -23,12 +23,15 @@
  bin_PROGRAMS = pixie
  pixie_LDFLAGS = $(all_libraries) $(KDE_RPATH) -L../giflib-4.1.0-lwz
  pixie_LDADD = $(LIB_KDEUI) $(LIB_KIO) -ltiff -lgif_pixie pixie.la 
@@ -11,8 +11,11 @@
   
 -dummy.cpp:
 -	echo > dummy.cpp
-+dummy__pixie.cpp:
++dummy_pixie.cpp:
 +	echo > dummy_pixie.cpp
++
++dummy.cpp:
++	echo > dummy.cpp
  
  messages:
  	$(XGETTEXT) `find . -name "*.cpp"` -o $(podir)/pixie.pot
