@@ -42,7 +42,7 @@ kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
 
 CFLAGS="%{rpmcflags}" CXXFLAGS="%{rpmcflags}"
-#%{__make} -f Makefile.cvs
+#%%{__make} -f Makefile.cvs
 %configure	\
 	--enable-final
 	
