@@ -22,7 +22,7 @@ can think of it as a combination of ACDSee(TM) and Paint Shop Pro(TM).
 %description -l pl
 Pixie jest narzêdziem s³u¿±cym do przegl±dania i zarz±dzania du¿±
 ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
-(poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe). 
+(poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe).
 
 %prep
 %setup -q
@@ -48,9 +48,9 @@ mv -f $RPM_BUILD_ROOT%{_applnkdir}/Graphics/*.desktop $RPM_BUILD_ROOT%{_applnkdi
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files 
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%attr(755,root,root) %{_prefix}/lib/*
-%{_prefix}/include/*
-%{_prefix}/share/*
+%attr(755,root,root) %{_libdir}/*
+%{_includedir}/*
+%{_datadir}/*
