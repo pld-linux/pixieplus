@@ -1,0 +1,149 @@
+diff -ur pixieplus-0.5.4.1.orig/app/Makefile.am pixieplus-0.5.4.1/app/Makefile.am
+--- pixieplus-0.5.4.1.orig/app/Makefile.am	2004-05-22 14:02:26.000000000 +0000
++++ pixieplus-0.5.4.1/app/Makefile.am	2005-11-28 12:26:34.000000000 +0000
+@@ -7,7 +7,7 @@
+ 	screengrab.cpp aniplayer.cpp slideshow.cpp border.cpp \
+ 	htmlexportwizard.cpp htmlexport.cpp imagecompare.cpp \
+ 	rightclick.cpp browser_sort.cpp \
+-	browser.cpp compressedgif.cpp attributedialog.cpp \
++	browser.cpp attributedialog.cpp \
+         imagebuffer.cpp filelist.cpp imagelistitem.cpp imageutils.cpp \
+         fullscreen.cpp scaledtoplevel.cpp main.cpp scrolltoplevel.cpp \
+         ifapp.cpp dndlistbox.cpp about.cpp catagorymgr.cpp jpegtransform.cpp
+diff -ur pixieplus-0.5.4.1.orig/app/Makefile.in pixieplus-0.5.4.1/app/Makefile.in
+--- pixieplus-0.5.4.1.orig/app/Makefile.in	2004-05-23 11:00:55.000000000 +0000
++++ pixieplus-0.5.4.1/app/Makefile.in	2005-11-28 12:27:44.000000000 +0000
+@@ -283,7 +283,7 @@
+ 	screengrab.cpp aniplayer.cpp slideshow.cpp border.cpp \
+ 	htmlexportwizard.cpp htmlexport.cpp imagecompare.cpp \
+ 	rightclick.cpp browser_sort.cpp \
+-	browser.cpp compressedgif.cpp attributedialog.cpp \
++	browser.cpp attributedialog.cpp \
+         imagebuffer.cpp filelist.cpp imagelistitem.cpp imageutils.cpp \
+         fullscreen.cpp scaledtoplevel.cpp main.cpp scrolltoplevel.cpp \
+         ifapp.cpp dndlistbox.cpp about.cpp catagorymgr.cpp jpegtransform.cpp
+@@ -314,7 +314,7 @@
+ 	imageheaders.lo dialogs.lo uimanager.lo hotlistbox.lo \
+ 	completion.lo screengrab.lo aniplayer.lo slideshow.lo border.lo \
+ 	htmlexportwizard.lo htmlexport.lo imagecompare.lo rightclick.lo \
+-	browser_sort.lo browser.lo compressedgif.lo attributedialog.lo \
++	browser_sort.lo browser.lo attributedialog.lo \
+ 	imagebuffer.lo filelist.lo imagelistitem.lo imageutils.lo \
+ 	fullscreen.lo scaledtoplevel.lo main.lo scrolltoplevel.lo \
+ 	ifapp.lo dndlistbox.lo about.lo catagorymgr.lo jpegtransform.lo
+@@ -325,7 +325,7 @@
+ 	imageheaders.lo dialogs.lo uimanager.lo hotlistbox.lo \
+ 	completion.lo screengrab.lo aniplayer.lo slideshow.lo border.lo \
+ 	htmlexportwizard.lo htmlexport.lo imagecompare.lo rightclick.lo \
+-	browser_sort.lo browser.lo compressedgif.lo attributedialog.lo \
++	browser_sort.lo browser.lo attributedialog.lo \
+ 	imagebuffer.lo filelist.lo imagelistitem.lo imageutils.lo \
+ 	fullscreen.lo scaledtoplevel.lo main.lo scrolltoplevel.lo \
+ 	ifapp.lo dndlistbox.lo about.lo catagorymgr.lo jpegtransform.lo\
+@@ -351,7 +351,6 @@
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/browser_sort.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/catagorymgr.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/completion.Plo \
+-#>- @AMDEP_TRUE@	./$(DEPDIR)/compressedgif.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/dialogs.Plo ./$(DEPDIR)/dirtree.Plo \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/dndlistbox.Plo ./$(DEPDIR)/dummy.Po \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/filelist.Plo ./$(DEPDIR)/fileop.Plo \
+@@ -379,7 +378,6 @@
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/browser_sort.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/catagorymgr.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/completion.Plo \
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/compressedgif.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/dialogs.Plo ./$(DEPDIR)/dirtree.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/dndlistbox.Plo ./$(DEPDIR)/dummy.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/filelist.Plo ./$(DEPDIR)/fileop.Plo \
+@@ -406,7 +404,6 @@
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/browser_sort.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/catagorymgr.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/completion.Plo \
+-@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/compressedgif.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/dialogs.Plo ./$(DEPDIR)/dirtree.Plo \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/dndlistbox.Plo ./$(DEPDIR)/dummy.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/filelist.Plo ./$(DEPDIR)/fileop.Plo \
+@@ -541,7 +538,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/browser_sort.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/catagorymgr.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/completion.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/compressedgif.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dialogs.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirtree.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dndlistbox.Plo@am__quote@
+@@ -1034,11 +1030,11 @@
+ 
+ 
+ #>+ 11
+-pixie_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/imagepreview.cpp $(srcdir)/batch.cpp $(srcdir)/fileop.cpp $(srcdir)/dirtree.cpp $(srcdir)/imageheaders.cpp $(srcdir)/dialogs.cpp $(srcdir)/uimanager.cpp $(srcdir)/hotlistbox.cpp $(srcdir)/completion.cpp $(srcdir)/screengrab.cpp $(srcdir)/aniplayer.cpp $(srcdir)/slideshow.cpp $(srcdir)/border.cpp $(srcdir)/htmlexportwizard.cpp $(srcdir)/htmlexport.cpp $(srcdir)/imagecompare.cpp $(srcdir)/rightclick.cpp $(srcdir)/browser_sort.cpp $(srcdir)/browser.cpp $(srcdir)/compressedgif.cpp $(srcdir)/attributedialog.cpp $(srcdir)/imagebuffer.cpp $(srcdir)/filelist.cpp $(srcdir)/imagelistitem.cpp $(srcdir)/imageutils.cpp $(srcdir)/fullscreen.cpp $(srcdir)/scaledtoplevel.cpp $(srcdir)/main.cpp $(srcdir)/scrolltoplevel.cpp $(srcdir)/ifapp.cpp $(srcdir)/dndlistbox.cpp $(srcdir)/about.cpp $(srcdir)/catagorymgr.cpp $(srcdir)/jpegtransform.cpp browser.moc.cpp htmlexportwizard.moc.cpp screengrab.moc.cpp hotlistbox.moc.cpp scaledtoplevel.moc.cpp dialogs.moc.cpp dndlistbox.moc.cpp attributedialog.moc.cpp rightclick.moc.cpp fileop.moc.cpp imagebuffer.moc.cpp about.moc.cpp catagorymgr.moc.cpp imagepreview.moc.cpp filelist.moc.cpp imagecompare.moc.cpp border.moc.cpp slideshow.moc.cpp batch.moc.cpp ifapp.moc.cpp scrolltoplevel.moc.cpp htmlexport.moc.cpp dirtree.moc.cpp aniplayer.moc.cpp uimanager.moc.cpp fullscreen.moc.cpp 
++pixie_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/imagepreview.cpp $(srcdir)/batch.cpp $(srcdir)/fileop.cpp $(srcdir)/dirtree.cpp $(srcdir)/imageheaders.cpp $(srcdir)/dialogs.cpp $(srcdir)/uimanager.cpp $(srcdir)/hotlistbox.cpp $(srcdir)/completion.cpp $(srcdir)/screengrab.cpp $(srcdir)/aniplayer.cpp $(srcdir)/slideshow.cpp $(srcdir)/border.cpp $(srcdir)/htmlexportwizard.cpp $(srcdir)/htmlexport.cpp $(srcdir)/imagecompare.cpp $(srcdir)/rightclick.cpp $(srcdir)/browser_sort.cpp $(srcdir)/browser.cpp $(srcdir)/attributedialog.cpp $(srcdir)/imagebuffer.cpp $(srcdir)/filelist.cpp $(srcdir)/imagelistitem.cpp $(srcdir)/imageutils.cpp $(srcdir)/fullscreen.cpp $(srcdir)/scaledtoplevel.cpp $(srcdir)/main.cpp $(srcdir)/scrolltoplevel.cpp $(srcdir)/ifapp.cpp $(srcdir)/dndlistbox.cpp $(srcdir)/about.cpp $(srcdir)/catagorymgr.cpp $(srcdir)/jpegtransform.cpp browser.moc.cpp htmlexportwizard.moc.cpp screengrab.moc.cpp hotlistbox.moc.cpp scaledtoplevel.moc.cpp dialogs.moc.cpp dndlistbox.moc.cpp attributedialog.moc.cpp rightclick.moc.cpp fileop.moc.cpp imagebuffer.moc.cpp about.moc.cpp catagorymgr.moc.cpp imagepreview.moc.cpp filelist.moc.cpp imagecompare.moc.cpp border.moc.cpp slideshow.moc.cpp batch.moc.cpp ifapp.moc.cpp scrolltoplevel.moc.cpp htmlexport.moc.cpp dirtree.moc.cpp aniplayer.moc.cpp uimanager.moc.cpp fullscreen.moc.cpp 
+ 	@echo 'creating pixie_la.all_cpp.cpp ...'; \
+ 	rm -f pixie_la.all_cpp.files pixie_la.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> pixie_la.all_cpp.final; \
+-	for file in imagepreview.cpp batch.cpp fileop.cpp dirtree.cpp imageheaders.cpp dialogs.cpp uimanager.cpp hotlistbox.cpp completion.cpp screengrab.cpp aniplayer.cpp slideshow.cpp border.cpp htmlexportwizard.cpp htmlexport.cpp imagecompare.cpp rightclick.cpp browser_sort.cpp browser.cpp compressedgif.cpp attributedialog.cpp imagebuffer.cpp filelist.cpp imagelistitem.cpp imageutils.cpp fullscreen.cpp scaledtoplevel.cpp main.cpp scrolltoplevel.cpp ifapp.cpp dndlistbox.cpp about.cpp catagorymgr.cpp jpegtransform.cpp browser.moc.cpp htmlexportwizard.moc.cpp screengrab.moc.cpp hotlistbox.moc.cpp scaledtoplevel.moc.cpp dialogs.moc.cpp dndlistbox.moc.cpp attributedialog.moc.cpp rightclick.moc.cpp fileop.moc.cpp imagebuffer.moc.cpp about.moc.cpp catagorymgr.moc.cpp imagepreview.moc.cpp filelist.moc.cpp imagecompare.moc.cpp border.moc.cpp slideshow.moc.cpp batch.moc.cpp ifapp.moc.cpp scrolltoplevel.moc.cpp htmlexport.moc.cpp dirtree.moc.cpp aniplayer.moc.cpp uimanager.moc.cpp fullscreen.moc.cpp ; do \
++	for file in imagepreview.cpp batch.cpp fileop.cpp dirtree.cpp imageheaders.cpp dialogs.cpp uimanager.cpp hotlistbox.cpp completion.cpp screengrab.cpp aniplayer.cpp slideshow.cpp border.cpp htmlexportwizard.cpp htmlexport.cpp imagecompare.cpp rightclick.cpp browser_sort.cpp browser.cpp attributedialog.cpp imagebuffer.cpp filelist.cpp imagelistitem.cpp imageutils.cpp fullscreen.cpp scaledtoplevel.cpp main.cpp scrolltoplevel.cpp ifapp.cpp dndlistbox.cpp about.cpp catagorymgr.cpp jpegtransform.cpp browser.moc.cpp htmlexportwizard.moc.cpp screengrab.moc.cpp hotlistbox.moc.cpp scaledtoplevel.moc.cpp dialogs.moc.cpp dndlistbox.moc.cpp attributedialog.moc.cpp rightclick.moc.cpp fileop.moc.cpp imagebuffer.moc.cpp about.moc.cpp catagorymgr.moc.cpp imagepreview.moc.cpp filelist.moc.cpp imagecompare.moc.cpp border.moc.cpp slideshow.moc.cpp batch.moc.cpp ifapp.moc.cpp scrolltoplevel.moc.cpp htmlexport.moc.cpp dirtree.moc.cpp aniplayer.moc.cpp uimanager.moc.cpp fullscreen.moc.cpp ; do \
+ 	  echo "#include \"$$file\"" >> pixie_la.all_cpp.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> pixie_la.all_cpp.final; \
+ 	done; \
+@@ -1111,7 +1107,6 @@
+ $(srcdir)/screengrab.cpp: imagedata.h 
+ $(srcdir)/browser_sort.cpp: imagedata.h 
+ $(srcdir)/aniplayer.cpp: imagedata.h 
+-$(srcdir)/compressedgif.cpp: imagedata.h 
+ $(srcdir)/completion.cpp: imagedata.h 
+ $(srcdir)/scaledtoplevel.cpp: imagedata.h 
+ nmcheck: 
+diff -ur pixieplus-0.5.4.1.orig/app/imageutils.cpp pixieplus-0.5.4.1/app/imageutils.cpp
+--- pixieplus-0.5.4.1.orig/app/imageutils.cpp	2004-05-22 14:02:26.000000000 +0000
++++ pixieplus-0.5.4.1/app/imageutils.cpp	2005-11-28 12:28:26.000000000 +0000
+@@ -25,10 +25,6 @@
+ #include <api.h>
+ };
+ 
+-// in compressedgif.cpp
+-unsigned int WriteCompressedGIFImage(const ImageInfo *image_info,
+-                                     Image *image);
+-
+ // Returns the filename extension
+ const char* extension(const char *str)
+ {
+@@ -506,11 +502,10 @@
+ {
+     bool tryQt = false;
+     bool result;
+-    bool isGIF = format ? qstricmp(format, "GIF") == 0 : false;
+     const char *str;
+     // see if it's a format Qt recognizes
+     if(format){
+-        if(isGIF ||(comment != QString::null && qstricmp(format, "PNG") != 0))
++        if(comment != QString::null && qstricmp(format, "PNG") != 0)
+             tryQt = false; // use Pixie's ImageMagick writer
+         else{
+             QStrList outputList = QImageIO::outputFormats();
+@@ -568,19 +563,13 @@
+     // still determined by extension. Iterate through known formats and use
+     // the correct encoder
+     result = false;
+-    if(isGIF){
+-        qWarning("Using compressed GIF writer");
+-        result = WriteCompressedGIFImage(info, image);
+-    }
+-    else{
+-        const MagickInfo *i = GetMagickInfo(NULL, &exception);
+-        while(i){
+-            if(i->encoder && qstricmp(i->name, format) == 0){
+-                result = i->encoder(info, image);
+-                break;
+-            }
+-            i = i->next;
++    const MagickInfo *i = GetMagickInfo(NULL, &exception);
++    while(i){
++        if(i->encoder && qstricmp(i->name, format) == 0){
++            result = i->encoder(info, image);
++            break;
+         }
++        i = i->next;
+     }
+     result = WriteImage(info, image);
+     if(image->next)
