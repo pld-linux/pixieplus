@@ -2,7 +2,7 @@ Summary:	pixieplus - image viewer for KDE
 Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
 Name:		pixieplus
 Version:	0.5.4.1
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source0:	http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/%{name}-%{ve
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-bool.patch
 Patch2:		%{name}-gcc34.patch
+Patch3:		%{name}-no_internal_gif_compression.patch
 URL:		http://people.fruitsalad.org/avleeuwen/distfiles/pixieplus/
 BuildRequires:	ImageMagick-c++-devel >= 6.0.0
 BuildRequires:	automake
@@ -40,6 +41,7 @@ ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 cp -f /usr/share/automake/config.* admin
