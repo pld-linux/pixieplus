@@ -1,5 +1,5 @@
 Summary:	pixieplus - image viewer for KDE
-Summary(pl):	pixieplus - przegl±darka obrazków dla KDE
+Summary(pl.UTF-8):   pixieplus - przeglÄ…darka obrazkÃ³w dla KDE
 Name:		pixieplus
 Version:	0.5.4.1
 Release:	7
@@ -31,10 +31,10 @@ large numbers of images as well as do basic editing such as adjust
 contrast/brightness, scale, and apply effects. For Windows users, you
 can think of it as a combination of ACDSee(TM) and Paint Shop Pro(TM).
 
-%description -l pl
-Pixie jest narzêdziem s³u¿±cym do przegl±dania i zarz±dzania du¿±
-ilo¶ci± plików graficznych umo¿liwiaj±cym prost± edycjê obrazów
-(poziomy jasno¶ci i kontrastu, skalowanie oraz efekty dodatkowe).
+%description -l pl.UTF-8
+Pixie jest narzÄ™dziem sÅ‚uÅ¼Ä…cym do przeglÄ…dania i zarzÄ…dzania duÅ¼Ä…
+iloÅ›ciÄ… plikÃ³w graficznych umoÅ¼liwiajÄ…cym prostÄ… edycjÄ™ obrazÃ³w
+(poziomy jasnoÅ›ci i kontrastu, skalowanie oraz efekty dodatkowe).
 
 %prep
 %setup -q
