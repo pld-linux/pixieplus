@@ -1,5 +1,5 @@
 Summary:	pixieplus - image viewer for KDE
-Summary(pl.UTF-8):   pixieplus - przeglądarka obrazków dla KDE
+Summary(pl.UTF-8):	pixieplus - przeglądarka obrazków dla KDE
 Name:		pixieplus
 Version:	0.5.4.1
 Release:	7
